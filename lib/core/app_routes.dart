@@ -4,8 +4,7 @@ import 'package:mini_app/presentation/screens/home/home_screen.dart';
 // Example route names
 class AppRoutes {
   static const String home = '/home';
-  static const String profile = '/profile';
-  static const String settings = '/settings';
+
 }
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {

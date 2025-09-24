@@ -8,22 +8,25 @@ class AppTheme {
       brightness: Brightness.light,
       primaryColor: Colors.blue,
       scaffoldBackgroundColor: Colors.white,
-      appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-        elevation: 0,
-      ),
+      
       colorScheme: ColorScheme.fromSwatch().copyWith(
         secondary: Colors.blueAccent,
       ),
       textTheme: TextTheme(
-        titleLarge: TextStyle(
+        titleLarge: GoogleFonts.raleway(
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: AppColors.navyColor,
-          fontFamily: GoogleFonts.raleway().fontFamily,
         ),
-        
+        bodyMedium: GoogleFonts.raleway(
+          fontSize: 14,
+          color: AppColors.lightBlueColor,
+          fontWeight: FontWeight.bold,
+        ),
+        bodySmall: GoogleFonts.raleway(
+          fontSize: 12,
+          color: AppColors.darkGrayColor,
+        ),
       ),
       buttonTheme: const ButtonThemeData(
         buttonColor: Colors.blue,
