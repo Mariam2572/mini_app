@@ -3,8 +3,8 @@ import 'package:mini_app/core/theme/app_colors.dart';
 import 'package:mini_app/core/utils/app_assets.dart';
 import 'package:mini_app/helper/helper_extention.dart';
 import 'package:mini_app/presentation/screens/home/widgets/anime_List_view.dart';
+import 'package:mini_app/presentation/screens/home/widgets/bottom_nav_bar.dart';
 import 'package:mini_app/presentation/screens/home/widgets/tabs.dart';
-import 'package:mini_app/presentation/screens/home/widgets/tabs_item.dart';
 import 'package:mini_app/presentation/screens/home/widgets/top_character.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,21 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  late TabController _tabController;
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: tabs.length, vsync: this);
-    _tabController.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
 
   List<String> tabs = [
     'All',
@@ -42,23 +27,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     "Drama",
     "Fantasy",
   ];
-
+  int selectedTabIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(
-          AppAssets.homeBackground,
-          fit: BoxFit.cover,
-          height: double.infinity,
-          width: double.infinity,
-        ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          Image.asset(
+            AppAssets.homeBackground,
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,
+          ),
 
-        SafeArea(
-          child: Material(
+          Material(
             color: Colors.transparent,
             child: Padding(
-              padding: const EdgeInsets.only(left: 14),
+              padding: const EdgeInsets.only(top: 40, left: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -72,7 +57,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ),
                   ),
                   const SizedBox(height: 23),
-                  Tabs(tabs: tabs, controller: _tabController),
+                  Tabs(
+                    tabs: tabs,
+                    selectedIndex: selectedTabIndex,
+                    onSelected: (index) {
+                      setState(() {
+                        selectedTabIndex = index;
+                      });
+                    },
+                  ),
                   const SizedBox(height: 20),
                   AnimeListView(),
                   SizedBox(height: 20),
@@ -83,13 +76,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ),
                   ),
                   SizedBox(height: 24),
-                  TopCharacter()
-              ],
+                  TopCharacter(),
+                ],
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
