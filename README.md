@@ -10,23 +10,7 @@ Anime Details: Full anime information with preview and watch options
 Bottom Navigation: Easy navigation between app sections
 
 🏗️ Architecture
-This project follows Clean Architecture principles with separation of concerns:
-lib/
-├── core/
-│   └── utils/
-│       └── app_assets.dart          # Asset paths management
-├── helper/
-│   └── helper_extention.dart        # Extension methods (context.textTheme)
-└── presentation/
-    ├── home/
-    │   └── widgets/                 # Home screen widgets
-    ├── upgrade/
-    │   ├── upgrade_screen.dart      # Subscription plans screen
-    │   └── widgets/
-    │       ├── plan_container.dart  # Subscription plan card
-    │       └── upgrade_title.dart   # Screen title
-    └── details/
-        └── anime_details_screen.dart # Anime information screen
+This project follows Clean Architecture principles with separation of concerns
 🎨 UI Components
 Home Screen
 
