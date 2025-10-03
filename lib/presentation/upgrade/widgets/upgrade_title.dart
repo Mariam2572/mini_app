@@ -18,7 +18,9 @@ class UpgradeTitle extends StatelessWidget {
             style: context.theme.textTheme.titleLarge,
           ),
         ),
-        SvgPicture.asset(AppAssets.closeIcon),
+        InkWell(
+          onTap: () => Navigator.pop(context),
+          child: SvgPicture.asset(AppAssets.closeIcon)),
       ],
     );
   }

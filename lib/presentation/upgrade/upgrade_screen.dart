@@ -27,57 +27,55 @@ class _UpgradeScreenState extends State<UpgradeScreen> {
             width: double.infinity,
           ),
           SafeArea(
-            child: Column(
-              children: [
-                const UpgradeTitle(),
-                const SizedBox(height: 20),
-                Image.asset(
-                  AppAssets.rocketBoy,
-                  height: 207,
-                ),
-                const SizedBox(height: 24),
-                Text(
-                  'Seamless Anime\nExperience, Ad-Free.',
-                  textAlign: TextAlign.center,
-                  style: context.textTheme.titleLarge,
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  'Enjoy unlimited anime streaming without\ninterruptions.',
-                  style: context.textTheme.bodyMedium?.copyWith(
-                    color: const Color(0xffAEADB5),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w300,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const UpgradeTitle(),
+                  const SizedBox(height: 20),
+                  Image.asset(
+                    AppAssets.rocketBoy,
+                    height: 207,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 32),
-                PlanContainer(
-                  isSelected: selectedPlan == 0,
-                  title: 'Monthly',
-                  price: '\$5 USD / Month',
-                  onTap: () {
-                    setState(() {
-                      selectedPlan = 0;
-                    });
-                  },
-                ),
-                PlanContainer(
-                  isSelected: selectedPlan == 1,
-                  title: 'Annually',
-                  price: '\$50 USD / Year',
-                  onTap: () {
-                    setState(() {
-                      selectedPlan = 1;
-                    });
-                  },
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: 56,
+                  const SizedBox(height: 24),
+                  Text(
+                    'Seamless Anime\nExperience, Ad-Free.',
+                    textAlign: TextAlign.center,
+                    style: context.textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    'Enjoy unlimited anime streaming without\ninterruptions.',
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      color: const Color(0xffAEADB5),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 32),
+                  PlanContainer(
+                    isSelected: selectedPlan == 0,
+                    title: 'Monthly',
+                    price: '\$5 USD / Month',
+                    onTap: () {
+                      setState(() {
+                        selectedPlan = 0;
+                      });
+                    },
+                  ),
+                  PlanContainer(
+                    isSelected: selectedPlan == 1,
+                    title: 'Annually',
+                    price: '\$50 USD / Year',
+                    onTap: () {
+                      setState(() {
+                        selectedPlan = 1;
+                      });
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
                     child: ElevatedButton(
                       onPressed: () {
                         // Handle continue action
@@ -85,7 +83,7 @@ class _UpgradeScreenState extends State<UpgradeScreen> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff5D5FEF),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                       ),
                       child: Text(
@@ -97,9 +95,9 @@ class _UpgradeScreenState extends State<UpgradeScreen> {
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 20),
-              ],
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
           ),
         ],

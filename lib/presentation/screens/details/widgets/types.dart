@@ -5,9 +5,10 @@ class Types extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Padding(
-      padding: const EdgeInsets.only(left: 45, top: 40),
+    return   SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ...List.generate(3, (index) {
             List<String> categories = [
@@ -17,10 +18,10 @@ class Types extends StatelessWidget {
             ];
             return Container(
               padding: EdgeInsets.symmetric(
-                horizontal: 16,
+                horizontal: 20,
                 vertical: 10,
               ),
-              margin: EdgeInsets.only(right: index < 2 ? 8 : 0),
+              margin: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(25),

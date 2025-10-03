@@ -14,8 +14,9 @@ class AppAssets {
   static const String eyeIcon = "assets/images/eye.svg";
   static const String stopWatchIcon = "assets/images/solar_stopwatch-play-bold.svg";
   static const String clappind = 'assets/images/HandsClapping.svg';
-  static const String movieIcon = 'assets/images/icon-park-solid_movie.svg';
+  static const String movieIcon = 'assets/images/movieIcon.svg';
   static const String closeIcon = 'assets/images/close.svg';
   static const String rocketBoy = 'assets/images/Rocket Boy 1.png';
   static const String files = 'assets/images/Files & Folders 3 1.png';
+  static const String fireIcon = 'assets/images/fire icon.svg';
 }
