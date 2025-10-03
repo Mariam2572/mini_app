@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_app/core/app_routes.dart';
 import 'package:mini_app/core/theme/app_colors.dart';
 import 'package:mini_app/core/utils/app_assets.dart';
 import 'package:mini_app/helper/helper_extention.dart';
@@ -44,40 +45,44 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             color: Colors.transparent,
             child: Padding(
               padding: const EdgeInsets.only(top: 40, left: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 23),
-                    child: Text(
-                      'Where Anime Comes Alive',
-                      style: context.textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.w800,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 23),
+                      child: Text(
+                        'Where Anime Comes Alive',
+                        style: context.textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w800,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 23),
-                  Tabs(
-                    tabs: tabs,
-                    selectedIndex: selectedTabIndex,
-                    onSelected: (index) {
-                      setState(() {
-                        selectedTabIndex = index;
-                      });
-                    },
-                  ),
-                  const SizedBox(height: 20),
-                  AnimeListView(),
-                  SizedBox(height: 20),
-                  Text(
-                    'Top Characters',
-                    style: context.textTheme.titleLarge?.copyWith(
-                      color: AppColors.blackColor,
+                    const SizedBox(height: 23),
+                    Tabs(
+                      tabs: tabs,
+                      selectedIndex: selectedTabIndex,
+                      onSelected: (index) {
+                        setState(() {
+                          selectedTabIndex = index;
+                        });
+                      },
                     ),
-                  ),
-                  SizedBox(height: 24),
-                  TopCharacter(),
-                ],
+                    const SizedBox(height: 20),
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.detailsScreen),
+                      child: AnimeListView()),
+                    SizedBox(height: 15),
+                    Text(
+                      'Top Characters',
+                      style: context.textTheme.titleLarge?.copyWith(
+                        color: AppColors.blackColor,
+                      ),
+                    ),
+                    SizedBox(height: 15),
+                    TopCharacter(),
+                  ],
+                ),
               ),
             ),
           ),

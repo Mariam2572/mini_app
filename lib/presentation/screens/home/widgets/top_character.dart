@@ -21,7 +21,7 @@ class TopCharacter extends StatelessWidget {
                   radius: 50,
                   backgroundImage: AssetImage(AppAssets.avatar),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 8),
                 Text(
                   'Kakashi Hatake',
                   style: context.textTheme.bodyMedium?.copyWith(
