@@ -1,6 +1,3 @@
-![WhatsApp Image 2025-10-03 at 10 21 30_73e284d9](https://github.com/user-attachments/assets/d7ea1e73-f9b0-44e7-9939-ff1a6283a00f)
-![WhatsApp Image 2025-10-03 at 10 19 47_99cefb8d](https://github.com/user-attachments/assets/985ebf20-7cb0-4f91-82c9-cf2ea539d29e)
-![WhatsApp Image 2025-10-03 at 10 19 47_16df3c28](https://github.com/user-attachments/assets/a1e7893c-2f7a-4624-81cd-f8ae95913ec4)
 Anime Streaming App
 A Flutter-based anime streaming application with a clean architecture structure, featuring subscription plans, anime browsing, and detailed anime information.
 📱 Features
@@ -62,6 +59,9 @@ Selection state management
 Custom styling based on selection
 Icon, title, price, and description
 Circular checkbox indicator
+![WhatsApp Image 2025-10-03 at 10 21 30_73e284d9](https://github.com/user-attachments/assets/d7ea1e73-f9b0-44e7-9939-ff1a6283a00f)
+![WhatsApp Image 2025-10-03 at 10 19 47_99cefb8d](https://github.com/user-attachments/assets/985ebf20-7cb0-4f91-82c9-cf2ea539d29e)
+![WhatsApp Image 2025-10-03 at 10 19 47_16df3c28](https://github.com/user-attachments/assets/a1e7893c-2f7a-4624-81cd-f8ae95913ec4)
 
 Upgrade Screen
 
